@@ -22,13 +22,15 @@ go get github.com/BamLubi/writerpool
 ```
 
 ```go
+import "github.com/BamLubi/writerpool"
+
 func main() {
     wp := writerpool.New()
     defer wp.Close()
 
     err := wp.WriteStringWithDate("directory name", "file name", "data")
     if err != nil {
-        paninc(err)
+        panic(err)
     }
 }
 
